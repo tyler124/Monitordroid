@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="libs/gcm.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="C:/Users/TB/Downloads/apache-mime4j-0.7.2/lib/apache-mime4j-core-0.7.2.jar" sourcepath="C:/Users/TB/Downloads/apache-mime4j-0.7.2-bin.zip"/>
+	<classpathentry kind="lib" path="C:/Users/TB/Downloads/httpcomponents-client-4.3.6/lib/httpmime-4.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/TB/Downloads/httpcomponents-client-4.3.6/lib/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/TB/Downloads/httpcomponents-client-4.3.6/lib/httpcore-4.3.3.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

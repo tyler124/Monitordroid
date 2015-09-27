@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.monitordroid.app"
+    android:versionCode="22"
+    android:versionName="1.02R" >
+
+    <!-- Monitordroid requires Android APK Level 16 (4.1) or above -->
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="24" />
+
+    <!-- GCM connects to Internet Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <permission
+        android:name="com.monitordroid.app.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.monitordroid.app.permission.C2D_MESSAGE" />
+
+    <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Core function features -->
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+    <uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    
+    <!-- Core function permissions -->
+    <uses-permission android:name="android.permission.CALL_PHONE" android:required="false" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" android:required="false" />
+    <uses-permission android:name="android.permission.VIBRATE" android:required="false" />
+    <uses-permission android:name="android.permission.CAMERA" android:required="false" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" android:required="false" />
+    <uses-permission android:name="android.permission.READ_SMS" android:required="false" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" android:required="false" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" android:required="false" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" android:required="false" />
+    <uses-permission android:name="android.permission.SEND_SMS" android:required="false" />
+    <uses-permission android:name="android.permission.WRITE_SMS" android:required="false" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" android:required="false" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" android:required="false" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" android:required="false" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"  />
+	
+    <!-- Main activity. -->
+    <application
+        android:icon="@drawable/newlogo2"
+        android:label="@string/app_name"
+        android:allowBackup="false"
+        
+         >
+         <!-- Google Play Services Library. -->
+		<meta-data 
+		    android:name="com.google.android.gms.version" 
+		    android:value="@integer/google_play_services_version" />
+		
+        <!-- Register Activity -->
+        <activity
+            android:name="com.monitordroid.app.RegisterActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Main Activity -->
+        <activity
+            android:name="com.monitordroid.app.MainActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name" >
+        </activity>
+
+       
+        
+        <!-- Google Cloud Messaging Receiver -->
+        <receiver
+            android:name="com.google.android.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.monitordroid.app" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Device Administration Receiver -->
+        <receiver
+            android:name="com.monitordroid.app.DeviceAdmin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+            		   android:resource="@xml/device_admin" />
+    		<intent-filter>
+        		<action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+        		<action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLE_REQUESTED" />
+        		<action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLED" />
+    		</intent-filter>           
+        </receiver>
+        
+        <!-- GCM Heartbeat Alarm Receiver -->
+        <receiver
+            android:name="com.monitordroid.app.GCMHeartbeatAlarm"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            android:process=":remote"> 
+        </receiver>
+        
+        <!-- Receiver called on successful device reboot  -->
+        <receiver android:name="com.monitordroid.app.BootReceiver"
+        		  android:enabled="true">
+    			<intent-filter>
+        			<action android:name="android.intent.action.BOOT_COMPLETED"></action>
+    			</intent-filter>
+		</receiver>
+        
+        
+        <service android:name="com.monitordroid.app.GCMIntentService" />
+        <service android:name="com.monitordroid.app.LocationService" />
+        <service android:name="com.monitordroid.app.AudioPlayer" />
+        <service android:name="com.monitordroid.app.SoundRecorder" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000000"
+    tools:context=".RegisterActivity" >
+     
+     <TextView android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/device_name_field"
+         android:layout_marginLeft="10dip"
+         android:layout_marginRight="10dip"
+         android:layout_marginTop="20dip"/>
+     
+     <EditText android:id="@+id/txtName" 
+         android:inputType="text"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dip"
+         android:layout_marginBottom="20dip"/>
+     
+     <TextView android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/account_email_field"
+         android:layout_marginLeft="10dip"
+         android:layout_marginRight="10dip"/>
+     
+     <EditText android:id="@+id/txtEmail" 
+         android:inputType="textEmailAddress"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dip"
+         android:layout_marginBottom="20dip"/>
+     
+     <Button android:id="@+id/btnRegister"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/register_button"
+         android:layout_margin="10dip"/>
+
+     <TextView
+         android:id="@+id/txtLink"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="right"
+         android:autoLink="all"
+         android:text="@string/signup_link" />
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<resources>
+
+    <string name="app_name">Monitordroid</string>
+    <string name="register_button">Register Device</string>
+    <string name="signup_link"><a href='https://monitordroid.com/trial'>Don\'t have an account? Sign up here.</a></string>
+    <string name="force_registration">Force Registration</string>
+    <string name="account_email_field">Account Email:</string>
+    <string name="device_name_field">Unique Device Name:</string>
+    <string name="notification_name">Notification: </string>
+    <string name="device_admin_prompt">You must enable device administratoion for certain features of Monitordroid to function.</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Monitordroid</string>
+    <string name="already_registered">Device is already registered on the server.</string>
+    <string name="gcm_registered">Device connected to Monitordroid server.</string>
+    <string name="gcm_unregistered">From monitordroid.com: device successfully unregistered!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on server.</string>
+    <string name="server_registered">From web server: successfully added new device with name</string>
+    <string name="to_account">to account:</string>
+    <string name="server_not_added">From web server: Failed to add new device with name</string>
+    <string name="ensure_spelling">Please make sure you have created an account and typed its name correctly into the \"Account Email\" field on the previous screen. Press back to try again.</string>
+    <string name="server_unregistered">From monitordroid.com: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on server after %1$d attempts. Please ensure the device\'s date and time are set accurately.</string>
+    <string name="server_unregister_error">Could not unregister device on Monitordroid Server (%1$s).</string>
+    <string name="options_register">Add Device</string>
+    <string name="options_unregister">Unregister</string>
+    <string name="options_clear">Clear</string>
+    <string name="options_exit">Exit</string>
+
+</resources>
