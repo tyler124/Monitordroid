@@ -14,7 +14,7 @@ Basic instructions:
 
 3. Open the CommonUtilities.java file in an editor. Set the 'DOMAIN' variable on line 40 to point to the link of your       active Monitordroid web server. This can be a domain or an IP address. If you are using a LAN IP address, you will not be able to use Monitordroid if your device leaves your local network. To solve this, you can forward port 80 from your router to the local machine on your network running your web server and use your router's public IP address in this field. 
 
-4. Set the 'SENDER_ID' variable on line 44 to the Sender ID you retrieved from step 1 of the instructions for the           Monitordroid-Web-Application
+4. Set the 'SENDER_ID' variable on line 44 to the Sender ID you retrieved from step 2 of the instructions for the           Monitordroid-Web-Application
 
 5. Export an APK and install it onto your intended devices.  
 
