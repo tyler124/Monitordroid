@@ -58,7 +58,7 @@ public class SoundRecorder extends Service {
 	 * Starts a new recording
 	 * 
 	 * @param timeMS
-	 *            Time (in minutes) to record
+	 *            Time (in milliseconds) to record
 	 * @throws IOException
 	 *             thrown when sound file cannot be output into the intended
 	 *             directory
