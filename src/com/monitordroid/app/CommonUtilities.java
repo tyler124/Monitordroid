@@ -37,7 +37,7 @@ public final class CommonUtilities {
 	 * that computer's local IP address to allow outside devices to communicate
 	 * with it.
 	 */
-	static final String DOMAIN = "http://YOUR_DOMAIN_HERE/Monitordroid-Web-Application";
+	static final String DOMAIN = "http://YOUR_DOMAIN_HERE/Monitordroid-Web-Application/receivers";
 	
 	// Google Sender ID - Must be the project ID of the
 	// intended server to receive GCM Messages from
